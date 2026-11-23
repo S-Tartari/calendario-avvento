@@ -47,6 +47,15 @@ h1 {
   line-height: 1.2;
 }
 
+.sottotitolo {
+  margin: 0.4rem 0 0;
+  color: var(--oro);
+  font-family: var(--font-titoli);
+  font-style: italic;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
 /* ---------- Biglietto del giorno ---------- */
 
 .biglietto {
