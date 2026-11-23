@@ -11,8 +11,8 @@
  */
 
 const CONFIG = {
-  nome: `Amore`,                    // in alto: "Per Amore"
-  firma: `Con tutto il mio amore`,  // in fondo alla pagina
+  nome: `Giuggi`,                    // in alto: "Per Amore"
+  firma: `Buon quasi natale`,  // in fondo alla pagina
   anno: 2026,                       // anno del calendario
 };
 
