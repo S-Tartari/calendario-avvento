@@ -1,0 +1,276 @@
+:root {
+  --verde-scuro: #0f3d2e;
+  --rosso: #b22234;
+  --oro: #e0b04a;
+  --crema: #fdf6e3;
+  --inchiostro: #2a2420;
+  --chiusa-bg: #24543f;
+  --chiusa-testo: #e8e2cf;
+  --raggio: 14px;
+  --font-titoli: Georgia, "Times New Roman", serif;
+  --font-testo: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-testo);
+  line-height: 1.6;
+  color: var(--crema);
+  background: radial-gradient(ellipse at top, #1a5640 0%, var(--verde-scuro) 55%, #082519 100%) fixed;
+}
+
+.contenuto {
+  position: relative;
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3rem;
+}
+
+/* ---------- Intestazione ---------- */
+
+.intestazione {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sopratitolo {
+  margin: 0;
+  color: var(--oro);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0.25rem 0 0;
+  font-family: var(--font-titoli);
+  font-weight: normal;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  line-height: 1.2;
+}
+
+/* ---------- Biglietto del giorno ---------- */
+
+.biglietto {
+  min-height: 220px;
+  margin-bottom: 2.5rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--inchiostro);
+  background: var(--crema);
+  border-top: 6px solid var(--rosso);
+  border-radius: var(--raggio);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.biglietto-data {
+  margin: 0;
+  color: var(--rosso);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.biglietto h2 {
+  margin: 0.4rem 0 1rem;
+  color: var(--verde-scuro);
+  font-family: var(--font-titoli);
+  font-weight: normal;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  line-height: 1.25;
+}
+
+/* Il titolo riceve il focus solo da script: niente contorno */
+.biglietto h2:focus {
+  outline: none;
+}
+
+.biglietto-testo {
+  margin: 0;
+  font-size: 1.1rem;
+  white-space: pre-line; /* mantiene gli a capo scritti in testi.js */
+}
+
+.rivela {
+  animation: rivela 0.5s ease-out;
+}
+
+@keyframes rivela {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---------- Griglia delle caselle ---------- */
+
+.griglia {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.casella {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  width: 100%;
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 12px;
+  font-family: var(--font-titoli);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.casella:focus-visible {
+  outline: 3px solid var(--crema);
+  outline-offset: 3px;
+}
+
+.casella:not(.chiusa):hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+
+.casella.aperta {
+  color: var(--rosso);
+  background: var(--crema);
+}
+
+.casella.oggi {
+  color: #1a1a1a;
+  background: var(--oro);
+  animation: pulsa 2.2s ease-out infinite;
+}
+
+.casella.chiusa {
+  color: var(--chiusa-testo);
+  background: var(--chiusa-bg);
+  border: 2px dashed rgba(232, 226, 207, 0.35);
+  cursor: not-allowed;
+}
+
+/* Segno sotto la casella attualmente mostrata nel biglietto */
+.casella[aria-current="true"]::after {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  width: 26px;
+  height: 3px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.casella-extra {
+  font-family: var(--font-testo);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.casella.scuoti {
+  animation: scuoti 0.4s ease;
+}
+
+@keyframes pulsa {
+  0%   { box-shadow: 0 0 0 0 rgba(224, 176, 74, 0.7); }
+  70%  { box-shadow: 0 0 0 12px rgba(224, 176, 74, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(224, 176, 74, 0); }
+}
+
+@keyframes scuoti {
+  0%, 100% { transform: translateX(0); }
+  25%      { transform: translateX(-5px); }
+  75%      { transform: translateX(5px); }
+}
+
+.avviso {
+  min-height: 1.6em;
+  margin: 1rem 0 0;
+  color: var(--chiusa-testo);
+  text-align: center;
+}
+
+/* ---------- Piè di pagina ---------- */
+
+.firma {
+  margin: 2.5rem 0 0;
+  color: var(--chiusa-testo);
+  font-family: var(--font-titoli);
+  font-style: italic;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* ---------- Neve ---------- */
+
+.neve {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.fiocco {
+  position: absolute;
+  top: -10px;
+  border-radius: 50%;
+  background: #fff;
+  animation: cadi linear infinite;
+}
+
+@keyframes cadi {
+  to { transform: translate3d(30px, 110vh, 0); }
+}
+
+/* ---------- Utilità ---------- */
+
+.visualmente-nascosto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 480px) {
+  .griglia {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.6rem;
+  }
+
+  .casella {
+    font-size: 1.4rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  .neve {
+    display: none;
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Evita che la pagina finisca nei motori di ricerca -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Calendario dell'Avvento</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎄</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="neve" aria-hidden="true"></div>
+
+  <div class="contenuto">
+    <header class="intestazione">
+      <p class="sopratitolo" id="dedica"></p>
+      <h1>Calendario dell'Avvento</h1>
+    </header>
+
+    <main>
+      <section class="biglietto" id="biglietto" aria-labelledby="biglietto-titolo">
+        <p class="biglietto-data" id="biglietto-data"></p>
+        <h2 id="biglietto-titolo" tabindex="-1"></h2>
+        <p class="biglietto-testo" id="biglietto-testo"></p>
+      </section>
+
+      <section aria-labelledby="titolo-caselle">
+        <h2 id="titolo-caselle" class="visualmente-nascosto">Le 24 caselle del calendario</h2>
+        <ol class="griglia" id="griglia"></ol>
+        <p class="avviso" id="avviso" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer>
+      <p class="firma" id="firma"></p>
+    </footer>
+
+    <noscript>
+      <p class="avviso">Per aprire il calendario serve JavaScript attivo nel browser.</p>
+    </noscript>
+  </div>
+
+  <script src="testi.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
