@@ -10,109 +10,101 @@
  * Unica regola: dentro i testi non usare il carattere ` (backtick).
  */
 
-const CONFIG = {
-  nome: `Giuggi`,                    // in alto: "Per Amore"
-  firma: `Buon quasi natale`,  // in fondo alla pagina
-  anno: 2026,                       // anno del calendario
-};
-
 const TESTI = {
   1: {
-    titolo: `Il primo regalo`,
-    testo: `Scrivi qui perché hai scelto questo regalo.
-
-Puoi andare a capo e lasciare righe vuote, come in una lettera.`,
+    titolo: `Svuotatasche`,
+    testo: `Abbiamo tante cose da fare assieme. Questa scatola spero ti possa aiutare a tenere i ricordi in ordine`,
   },
   2: {
-    titolo: `Titolo del giorno 2`,
-    testo: `Scrivi qui il significato del regalo del giorno 2.`,
+    titolo: `Sale e scende`,
+    testo: `So che non sarà in palette con la cucina, ma mi piacevano`,
   },
   3: {
-    titolo: `Titolo del giorno 3`,
-    testo: `Scrivi qui il significato del regalo del giorno 3.`,
+    titolo: `Beauty and Beast`,
+    testo: `Quando organizziamo una serata film, pizza e...?`,
   },
   4: {
-    titolo: `Titolo del giorno 4`,
-    testo: `Scrivi qui il significato del regalo del giorno 4.`,
+    titolo: `Idee`,
+    testo: `Mi chiedi sempre "ma non ti annoi mai con me?". Dovvesse mai succedere, possiamo cercare nuove idee`,
   },
   5: {
-    titolo: `Titolo del giorno 5`,
-    testo: `Scrivi qui il significato del regalo del giorno 5.`,
+    titolo: `Candies`,
+    testo: `Se finiscono, tocca andare in Norvegia`,
   },
   6: {
-    titolo: `Titolo del giorno 6`,
-    testo: `Scrivi qui il significato del regalo del giorno 6.`,
+    titolo: `Virus`,
+    testo: `Per le nostre prossime avventure. Bisogna sempre partire preparati`,
   },
   7: {
-    titolo: `Titolo del giorno 7`,
-    testo: `Scrivi qui il significato del regalo del giorno 7.`,
+    titolo: `Che buon profumo`,
+    testo: `Anche se non è una Ferrari, almeno profuma`,
   },
   8: {
-    titolo: `Titolo del giorno 8`,
-    testo: `Scrivi qui il significato del regalo del giorno 8.`,
+    titolo: `Alberooo`,
+    testo: `Ecco il mio piccolo contributo`,
   },
   9: {
-    titolo: `Titolo del giorno 9`,
-    testo: `Scrivi qui il significato del regalo del giorno 9.`,
+    titolo: `Centro massaggi`,
+    testo: `Non poteva mancare per le sere in cui sei più stanca. Pronto per farti rilassare`,
   },
   10: {
-    titolo: `Titolo del giorno 10`,
-    testo: `Scrivi qui il significato del regalo del giorno 10.`,
+    titolo: `Non ti scordar di me`,
+    testo: `Sperando che tu non li perda... (2 li ho presi io ahahah, mi servivano)`,
   },
   11: {
-    titolo: `Titolo del giorno 11`,
-    testo: `Scrivi qui il significato del regalo del giorno 11.`,
+    titolo: `...`,
+    testo: `Sono timido`,
   },
   12: {
-    titolo: `Titolo del giorno 12`,
-    testo: `Scrivi qui il significato del regalo del giorno 12.`,
+    titolo: `Borse`,
+    testo: `Kelly? Birkin? Ah, no. Sono due duffel bag`,
   },
   13: {
-    titolo: `Titolo del giorno 13`,
-    testo: `Scrivi qui il significato del regalo del giorno 13.`,
+    titolo: `Ricordi`,
+    testo: `Non potevo lasciarle nella macchina`,
   },
   14: {
-    titolo: `Titolo del giorno 14`,
-    testo: `Scrivi qui il significato del regalo del giorno 14.`,
+    titolo: `Gnam Gnam`,
+    testo: `Oggi sgarro?`,
   },
   15: {
-    titolo: `Titolo del giorno 15`,
-    testo: `Scrivi qui il significato del regalo del giorno 15.`,
+    titolo: `Ma come ti vesti?`,
+    testo: `Effettivamente non posso dire nulla, ma questo potrebbe servirti per i tuoi mille vestiti`,
   },
   16: {
-    titolo: `Titolo del giorno 16`,
-    testo: `Scrivi qui il significato del regalo del giorno 16.`,
+    titolo: `Ho avuto un suggerimento`,
+    testo: `Sto ancora aspettando quel famoso balletto`,
   },
   17: {
-    titolo: `Titolo del giorno 17`,
-    testo: `Scrivi qui il significato del regalo del giorno 17.`,
+    titolo: `Andiamo in vacanza?`,
+    testo: `Mai dire mai... magari è quello buono`,
   },
   18: {
-    titolo: `Titolo del giorno 18`,
-    testo: `Scrivi qui il significato del regalo del giorno 18.`,
+    titolo: `Frigorifero`,
+    testo: `Polo positivo e polo negativo`,
   },
   19: {
-    titolo: `Titolo del giorno 19`,
-    testo: `Scrivi qui il significato del regalo del giorno 19.`,
+    titolo: `Siamo noi (insomma)`,
+    testo: `Ecco cos'ho preso il giorno in cui mi sono assentato per 30 minuti in centro. Ho dovuto supplicare anche la commessa`,
   },
   20: {
-    titolo: `Titolo del giorno 20`,
-    testo: `Scrivi qui il significato del regalo del giorno 20.`,
+    titolo: `Il mio antistress preferito`,
+    testo: `Bisogna prendersene cura`,
   },
   21: {
-    titolo: `Titolo del giorno 21`,
-    testo: `Scrivi qui il significato del regalo del giorno 21.`,
+    titolo: `Cinese`,
+    testo: `Balla balla... così mi hanno detto`,
   },
   22: {
-    titolo: `Titolo del giorno 22`,
-    testo: `Scrivi qui il significato del regalo del giorno 22.`,
+    titolo: `Cenerentola`,
+    testo: `Il tuo guilty pleasure`,
   },
   23: {
-    titolo: `Titolo del giorno 23`,
-    testo: `Scrivi qui il significato del regalo del giorno 23.`,
+    titolo: `Chiavi`,
+    testo: `Non è un'allusione sessuale`,
   },
   24: {
-    titolo: `Titolo del giorno 24`,
-    testo: `Scrivi qui il significato dell'ultimo regalo, quello della vigilia.`,
+    titolo: `Pollice verde`,
+    testo: `Per dare un tocco di verde nel bronx`,
   },
 };
