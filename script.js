@@ -104,7 +104,7 @@
     riempiBiglietto(
       "Pazienza…",
       n === 1 ? "Manca 1 giorno" : "Mancano " + n + " giorni",
-      "Il 1° dicembre si aprirà la prima casella.\nOgni giorno un piccolo pensiero, fino alla vigilia di Natale.",
+      "Il 1° dicembre si aprirà la prima casella.\nDovrai attendere ancora un pò.",
       false
     );
   }
@@ -170,7 +170,7 @@
     const giorno = Number(casella.dataset.giorno);
 
     if (casella.classList.contains("chiusa")) {
-      el.avviso.textContent = "Non ancora! La casella " + giorno + " si apre " + ilGiorno(giorno) + ".";
+      el.avviso.textContent = "Sii paziente! La casella " + giorno + " si apre " + ilGiorno(giorno) + ".";
       casella.classList.remove("scuoti");
       void casella.offsetWidth;
       casella.classList.add("scuoti");
