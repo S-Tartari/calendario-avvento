@@ -39,16 +39,8 @@ body {
   margin-bottom: 2rem;
 }
 
-.sopratitolo {
-  margin: 0;
-  color: var(--oro);
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
 h1 {
-  margin: 0.25rem 0 0;
+  margin: 0;
   font-family: var(--font-titoli);
   font-weight: normal;
   font-size: clamp(2rem, 6vw, 3.2rem);
@@ -117,19 +109,24 @@ h1 {
   list-style: none;
 }
 
+/* Ogni casella ha la stessa struttura (numero + riga sotto, anche se vuota),
+   così numeri e lucchetti restano allineati in tutte le caselle.
+   Palatino/Times hanno cifre tutte della stessa altezza (Georgia no). */
 .casella {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.1rem;
+  gap: 0.35rem;
   width: 100%;
   aspect-ratio: 1;
-  border: 0;
+  padding: 0;
+  border: 2px solid transparent;
   border-radius: 12px;
-  font-family: var(--font-titoli);
+  font-family: Palatino, "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
   font-size: 1.8rem;
+  font-variant-numeric: lining-nums;
   line-height: 1;
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -159,7 +156,8 @@ h1 {
 .casella.chiusa {
   color: var(--chiusa-testo);
   background: var(--chiusa-bg);
-  border: 2px dashed rgba(232, 226, 207, 0.35);
+  border-style: dashed;
+  border-color: rgba(232, 226, 207, 0.35);
   cursor: not-allowed;
 }
 
@@ -167,18 +165,31 @@ h1 {
 .casella[aria-current="true"]::after {
   content: "";
   position: absolute;
-  bottom: 10px;
+  bottom: 8%;
+  left: 50%;
   width: 26px;
   height: 3px;
+  margin-left: -13px;
   border-radius: 2px;
   background: currentColor;
 }
 
 .casella-extra {
+  display: block;
+  height: 0.9rem;
   font-family: var(--font-testo);
   font-size: 0.65rem;
-  letter-spacing: 0.08em;
+  line-height: 0.9rem;
+  text-align: center;
   text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-indent: 0.08em; /* compensa lo spazio finale della spaziatura */
+}
+
+.casella-extra.lucchetto {
+  font-size: 0.8rem;
+  letter-spacing: 0;
+  text-indent: 0;
 }
 
 .casella.scuoti {
@@ -201,17 +212,6 @@ h1 {
   min-height: 1.6em;
   margin: 1rem 0 0;
   color: var(--chiusa-testo);
-  text-align: center;
-}
-
-/* ---------- Piè di pagina ---------- */
-
-.firma {
-  margin: 2.5rem 0 0;
-  color: var(--chiusa-testo);
-  font-family: var(--font-titoli);
-  font-style: italic;
-  font-size: 1.1rem;
   text-align: center;
 }
 

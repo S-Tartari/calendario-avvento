@@ -1,13 +1,8 @@
 /*
- * ✏️  QUESTO È L'UNICO FILE CHE DEVI MODIFICARE
+ * Un biglietto per ogni giorno, dal 1 al 24 dicembre.
  *
- * - CONFIG: nome, firma e anno del calendario.
- * - TESTI:  un biglietto per ogni giorno, dal 1 al 24 dicembre.
- *
- * I testi sono racchiusi tra backtick (`...`), così puoi usare gli apostrofi
- * liberamente (l'amore, un'idea...) e andare a capo dove vuoi:
- * gli a capo e le righe vuote vengono mantenuti nella pagina.
- * Unica regola: dentro i testi non usare il carattere ` (backtick).
+ * I testi sono tra backtick (`...`): puoi usare gli apostrofi e andare a capo.
+ * Dentro i testi non usare il carattere ` (backtick).
  */
 
 const TESTI = {
@@ -25,7 +20,7 @@ const TESTI = {
   },
   4: {
     titolo: `Idee`,
-    testo: `Mi chiedi sempre "ma non ti annoi mai con me?". Dovvesse mai succedere, possiamo cercare nuove idee`,
+    testo: `Mi chiedi sempre "ma non ti annoi mai con me?". Dovesse mai succedere, possiamo cercare nuove idee`,
   },
   5: {
     titolo: `Candies`,

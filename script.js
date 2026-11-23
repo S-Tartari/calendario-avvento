@@ -1,19 +1,17 @@
 (function () {
   "use strict";
 
-  const ANNO = CONFIG.anno;
+  const ANNO = 2026;
   const ULTIMO_GIORNO = 24;
   const MS_GIORNO = 24 * 60 * 60 * 1000;
 
   const el = {
-    dedica: document.getElementById("dedica"),
     biglietto: document.getElementById("biglietto"),
     data: document.getElementById("biglietto-data"),
     titolo: document.getElementById("biglietto-titolo"),
     testo: document.getElementById("biglietto-testo"),
     griglia: document.getElementById("griglia"),
     avviso: document.getElementById("avviso"),
-    firma: document.getElementById("firma"),
   };
 
   let sbloccatoCorrente = null;
@@ -130,6 +128,7 @@
       btn.classList.add("chiusa");
       btn.setAttribute("aria-disabled", "true");
       btn.setAttribute("aria-label", "Giorno " + giorno + ", si apre " + ilGiorno(giorno));
+      extra.classList.add("lucchetto");
       extra.textContent = "🔒";
     } else if (giorno === oggi) {
       btn.classList.add("oggi");
@@ -140,7 +139,7 @@
       btn.setAttribute("aria-label", "Giorno " + giorno + ". Riapri il biglietto");
     }
 
-    if (extra.textContent) btn.append(extra);
+    btn.append(extra); // sempre presente, anche vuoto, per tenere i numeri allineati
     li.append(btn);
     return li;
   }
@@ -216,8 +215,6 @@
     }
   }
 
-  el.dedica.textContent = "Per " + CONFIG.nome;
-  el.firma.textContent = CONFIG.firma;
   creaNeve();
   disegna();
   programmaMezzanotte();
